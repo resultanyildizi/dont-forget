@@ -8,7 +8,6 @@ void main() {
   List<Entry> tEntryList;
   List<Map<String, dynamic>> tEntryMapList;
   List<String> tEntryJsonList;
-  List<DateTime> tDateTimeList;
   List<String> tDateTimeStrList;
 
   setUp(() {
