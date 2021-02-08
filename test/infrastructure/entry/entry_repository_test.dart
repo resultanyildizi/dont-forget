@@ -1,5 +1,3 @@
-import 'dart:math';
-
 import 'package:dartz/dartz.dart';
 import 'package:dont_forget/domain/core/failure.dart';
 import 'package:dont_forget/domain/entry/entry.dart';
@@ -41,6 +39,7 @@ void main() {
           verify(
             mockSharedPreferences.getString(EntryRepository.cachedEntryKey),
           );
+
           expect(result, equals(Right<Failure, Entry>(tEntryFromJson)));
         },
       );
@@ -55,7 +54,8 @@ void main() {
           verify(
             mockSharedPreferences.getString(EntryRepository.cachedEntryKey),
           );
-          expect(result, equals(Left<Failure, Entry>(CacheFailure())));
+
+          expect(result, equals(const Left<Failure, Entry>(CacheFailure())));
         },
       );
 
@@ -71,7 +71,41 @@ void main() {
           verify(
             mockSharedPreferences.getString(EntryRepository.cachedEntryKey),
           );
-          expect(result, equals(Left<Failure, Entry>(FormatFailure())));
+
+          expect(result, equals(const Left<Failure, Entry>(FormatFailure())));
+        },
+      );
+    });
+
+    group('updateCache', () {
+      test(
+        'should return [Right<Failure, Unit>]  when mockSharedPreferences.setString() is successful',
+        () async {
+          // act
+          final result = await entryRepository.updateCache(entry: tEntry);
+          // assert
+          verify(
+            mockSharedPreferences.setString(
+              EntryRepository.cachedEntryKey,
+              tEntryJson,
+            ),
+          );
+
+          expect(result, equals(const Right<Failure, Unit>(unit)));
+        },
+      );
+
+      test(
+        'should return [Left<Failure, Unit>]  when mockSharedPreferences.setString() throws an exception',
+        () async {
+          // arrange
+          when(mockSharedPreferences.setString(any, any))
+              .thenThrow(Exception());
+          // act
+          final result = await entryRepository.updateCache(entry: tEntry);
+          // assert
+
+          expect(result, equals(const Left<Failure, Unit>(CacheFailure())));
         },
       );
     });

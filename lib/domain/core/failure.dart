@@ -1,13 +1,9 @@
-import 'package:equatable/equatable.dart';
+import 'package:freezed_annotation/freezed_annotation.dart';
 
-abstract class Failure extends Equatable {}
+part 'failure.freezed.dart';
 
-class CacheFailure extends Failure {
-  @override
-  List<Object> get props => [];
-}
-
-class FormatFailure extends Failure {
-  @override
-  List<Object> get props => [];
+@freezed
+abstract class Failure with _$Failure {
+  const factory Failure.cacheFailure() = CacheFailure;
+  const factory Failure.formatFailure() = FormatFailure;
 }
