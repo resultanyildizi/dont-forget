@@ -45,14 +45,15 @@ class Entry {
     if (map == null) return null;
 
     return Entry(
-      value: map['value'],
-      updatedAt: DateTime.fromMillisecondsSinceEpoch(map['updatedAt']),
+      value: map['value'] as bool,
+      updatedAt: DateTime.fromMillisecondsSinceEpoch(map['updatedAt'] as int),
     );
   }
 
   String toJson() => json.encode(toMap());
 
-  factory Entry.fromJson(String source) => Entry.fromMap(json.decode(source));
+  factory Entry.fromJson(String source) =>
+      Entry.fromMap(json.decode(source) as Map<String, dynamic>);
 
   @override
   String toString() => 'Entry(value: $value, updatedAt: $updatedAt)';
