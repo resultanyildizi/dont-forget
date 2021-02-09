@@ -24,7 +24,7 @@ Don't Forget is a simple mobile application created with Flutter. It simply help
 
 ### Built With
 
-- [Flutter]([flutter-url])
+- [Flutter][flutter-url]
 
 ## Getting Started
 
@@ -90,7 +90,8 @@ Distributed under the MIT License. See `LICENSE` for more information.
 
 ## Contributers
 
-<a href='https://github.com/rtanyildizi' target="_blank"><div align=center style='padding: 10px; width: 200px; border: 1px solid white; background-color: #282A36; border-radius: 10px'>
+<a href='https://github.com/rtanyildizi' target="_blank">
+<div float="left" align=center style='padding: 10px; width: 200px; border: 1px solid white; background-color: #282A36; border-radius: 10px'>
 <img src="https://github.com/rtanyildizi.png" style="border-radius:50%" width=150px />
 
 <h4 style='color: white; font-weight: bold'> Nurettin Resul Tanyıldızı </h4>
