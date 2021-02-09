@@ -88,7 +88,7 @@ Distributed under the MIT License. See `LICENSE` for more information.
 
 <!-- CONTACT -->
 
-## Contributers
+## Contributors
 
 <a href='https://github.com/rtanyildizi' target="_blank">
 <div float="left" align=center style='padding: 10px; width: 200px; border: 1px solid white; background-color: #282A36; border-radius: 10px'>
