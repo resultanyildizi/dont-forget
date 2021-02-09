@@ -14,8 +14,6 @@
 <p align=center>A simple reminder app created with Flutter<p/>
 </p>
 
-<!-- TABLE OF CONTENTS -->
-
 <!-- Description -->
 
 <br>
